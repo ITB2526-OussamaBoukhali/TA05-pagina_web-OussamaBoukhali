@@ -3,6 +3,8 @@ body {
   font-family: 'Segoe UI', sans-serif;
   background-color: #f0f0f0;
 }
+
+/* Encabezado y menú */
 header {
   background-color: #333;
   color: white;
@@ -33,7 +35,66 @@ nav a {
 nav a:hover {
   background-color: #005f99;
 }
+
+/* Contenido principal */
 main {
   padding: 2rem;
 }
 .intro, .explanation {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Bloques de proyectos */
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.project {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  flex: 1;
+  min-width: 250px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Galerías de imágenes */
+.gallery {
+  display: flex;
+  gap: 1rem;
+}
+.gallery img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 8px;
+}
+
+/* Botones */
+.buttons {
+  margin-top: 1rem;
+}
+.buttons a {
+  display: inline-block;
+  background-color: #007acc;
+  color: white;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.buttons a:hover {
+  background-color: #005f99;
+}
+
+/* Pie de página */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
