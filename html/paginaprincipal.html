@@ -1,46 +1,61 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Página Principal</title>
-  <link rel="stylesheet" href="/css/estilos.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebDev Group</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
-  <header>
-    <img src="imagenes/logo.png" alt="Logo">
-    <h1>WebDev Group</h1>
-    <nav>
-      <ul>
-        <li><a href="paginaprincipal.html">Inicio</a></li>
-        <li><a href="listadeproyectos.html">Listado</a></li>
-        <li><a href="proyecto1.html">Proyecto 1</a></li>
-        <li><a href="proyecto2.html">Proyecto 2</a></li>
-      </ul>
-    </nav>
-  </header>
+<body class="pagina-sin-sidebar">
 
-  <main>
-    <section class="intro">
-      <h2>Bienvenido</h2>
-      <p>Explora nuestros proyectos de desarrollo web.</p>
-    </section>
+    <div class="layout-grid">
 
-    <section class="projects">
-      <div class="project">
-        <h3>Proyecto 1</h3>
-        <p>Aplicación de tareas.</p>
-        <a href="proyecto1.html">Ver más</a>
-      </div>
-      <div class="project">
-        <h3>Proyecto 2</h3>
-        <p>Galería interactiva.</p>
-        <a href="proyecto2.html">Ver más</a>
-      </div>
-    </section>
-  </main>
+        <aside class="area-logo glass-box">
+            <img src="../img/ITB-Logo.png" alt="Logo ITB" class="logo-img">
+        </aside>
 
-  <footer>
-    <p>&copy; 2025 WebDev Group</p>
-  </footer>
+        <header class="area-header glass-box">
+            <h1 class="main-title">WEBDEV GROUP</h1>
+
+            <nav class="top-nav">
+                <a href="paginaprincipal.html" class="pill-btn active">Inicio</a>
+                <a href="proyecto1.html" class="pill-btn">Project 1</a>
+                <a href="proyecto2.html" class="pill-btn">Proyecto 2</a>
+                <a href="listadeproyectos.html" class="pill-btn">Listado</a>
+            </nav>
+        </header>
+
+        <main class="area-main">
+
+            <div class="intro-box">
+                <h2>Bienvenido</h2>
+                <p>Selecciona uno de los proyectos para ver los detalles.</p>
+            </div>
+
+            <div class="main-cards">
+                <a href="proyecto1.html" class="card">
+                    <h3>Proyecto 1</h3>
+                    <p>Gestión de Tareas</p>
+                </a>
+                <a href="proyecto2.html" class="card">
+                    <h3>Proyecto 2</h3>
+                    <p>Galería Interactiva</p>
+                </a>
+                <a href="listadeproyectos.html" class="card">
+                    <h3>Ver Todo</h3>
+                    <p>Catálogo Completo</p>
+                </a>
+            </div>
+
+        </main>
+
+        <footer class="area-footer glass-box">
+            <p>&copy; 2025 WebDev Group</p>
+        </footer>
+
+    </div>
+
+    <script src="../js/java.js"></script>
 </body>
 </html>

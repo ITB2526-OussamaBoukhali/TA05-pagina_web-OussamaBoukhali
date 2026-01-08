@@ -1,43 +1,59 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Proyecto 1 - App de Tareas</title>
-  <link rel="stylesheet" href="/css/estilos.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto 1 - WebDev</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
-  <header>
-    <img src="imagenes/logo.png" alt="Logo">
-    <h1>Proyecto 1: App de Tareas</h1>
-    <nav>
-      <ul>
-        <li><a href="paginaprincipal.html">Inicio</a></li>
-        <li><a href="listadeproyectos.html">Listado</a></li>
-        <li><a href="proyecto1.html">Proyecto 1</a></li>
-        <li><a href="proyecto2.html">Proyecto 2</a></li>
-      </ul>
-    </nav>
-  </header>
+<body class="pagina-sin-sidebar">
 
-  <main>
-    <section class="explanation">
-      <h2>Descripción</h2>
-      <p>Aplicación sencilla para gestionar tareas diarias.</p>
-    </section>
+    <div class="layout-grid">
 
-    <section class="gallery">
-      <img src="imagenes/tarea1.png" alt="Vista 1">
-      <img src="imagenes/tarea2.png" alt="Vista 2">
-      <img src="imagenes/tarea3.png" alt="Vista 3">
-    </section>
+        <aside class="area-logo glass-box">
+            <img src="../img/ITB-Logo.png" alt="Logo ITB" class="logo-img">
+        </aside>
 
-    <section class="buttons">
-      <a href="descargar_proyecto1.zip" download>Descargar Proyecto 1</a>
-    </section>
-  </main>
+        <header class="area-header glass-box">
+            <h1 class="main-title">GESTIÓN DE TAREAS</h1>
+            <nav class="top-nav">
+                <a href="paginaprincipal.html" class="pill-btn">Inicio</a>
+                <a href="proyecto1.html" class="pill-btn active">Project 1</a>
+                <a href="proyecto2.html" class="pill-btn">Proyecto 2</a>
+                <a href="listadeproyectos.html" class="pill-btn">Listado</a>
+            </nav>
+        </header>
 
-  <footer>
-    <p>&copy; 2025 WebDev Group</p>
-  </footer>
+        <main class="area-main project-content">
+
+            <div class="project-info">
+                <h2>Proyecto 1</h2>
+                <p>Esta es una explicación detallada del proyecto. Aquí describimos cómo funciona la gestión de tareas, las tecnologías utilizadas y los objetivos alcanzados.</p>
+            </div>
+
+            <div class="project-gallery">
+                <div class="img-box">IMG 1</div>
+                <div class="img-box">IMG 2</div>
+                <div class="img-box">IMG 3</div>
+            </div>
+
+            <div class="project-nav-row">
+                <a href="paginaprincipal.html" class="action-btn outline">PÁGINA PRINCIPAL</a>
+                <a href="proyecto2.html" class="action-btn outline">PROYECTO 2</a>
+            </div>
+
+            <div class="project-download-row">
+                <a href="#" class="action-btn download">DESCARGAR PROYECTO 1</a>
+            </div>
+
+        </main>
+
+        <footer class="area-footer glass-box">
+            <p>&copy; 2025 WebDev Group - Proyecto 1</p>
+        </footer>
+
+    </div>
+    <script src="../js/java.js"></script>
 </body>
 </html>

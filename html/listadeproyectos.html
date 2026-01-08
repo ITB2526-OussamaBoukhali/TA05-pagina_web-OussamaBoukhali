@@ -1,51 +1,103 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Listado de Proyectos</title>
-  <link rel="stylesheet" href="/css/estilos.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado Completo - WebDev</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
-  <header>
-    <img src="imagenes/logo.png" alt="Logo">
-    <h1>Listado de Proyectos</h1>
-    <nav>
-      <ul>
-        <li><a href="paginaprincipal.html">Inicio</a></li>
-        <li><a href="listadeproyectos.html">Listado</a></li>
-        <li><a href="proyecto1.html">Proyecto 1</a></li>
-        <li><a href="proyecto2.html">Proyecto 2</a></li>
-      </ul>
-    </nav>
-  </header>
+<body class="pagina-sin-sidebar">
 
-  <main>
-    <section class="projects">
-      <div class="project">
-        <h3>Proyecto 1</h3>
-        <p>App de tareas.</p>
-        <a href="proyecto1.html">Abrir Proyecto 1</a>
-      </div>
-      <div class="project">
-        <h3>Proyecto 2</h3>
-        <p>Galería web.</p>
-        <a href="proyecto2.html">Abrir Proyecto 2</a>
-      </div>
-      <div class="project">
-        <h3>Proyecto 3</h3>
-        <p>Blog estático.</p>
-        <a href="#">Próximamente</a>
-      </div>
-      <div class="project">
-        <h3>Proyecto 4</h3>
-        <p>Landing page.</p>
-        <a href="#">Próximamente</a>
-      </div>
-    </section>
-  </main>
+    <div class="layout-grid">
 
-  <footer>
-    <p>&copy; 2025 WebDev Group</p>
-  </footer>
+        <aside class="area-logo glass-box">
+            <img src="../img/ITB-Logo.png" alt="Logo ITB" class="logo-img">
+        </aside>
+
+        <header class="area-header glass-box">
+            <h1 class="main-title">LIST OF PROJECTS</h1>
+            <nav class="top-nav">
+                <a href="paginaprincipal.html" class="pill-btn">Inicio</a>
+                <a href="proyecto1.html" class="pill-btn">Project 1</a>
+                <a href="proyecto2.html" class="pill-btn">Project 2</a>
+                <a href="listadeproyectos.html" class="pill-btn active">List of projects</a>
+            </nav>
+        </header>
+
+        <main class="area-main full-list-container">
+
+            <div class="intro-box">
+                <h2>Repositorio SysAdmin</h2>
+                <p>Colección completa de practicas clasificadas por áreas tecnológicas.</p>
+            </div>
+
+            <div class="categories-grid">
+
+                <article class="cat-card">
+                    <h3>🛡️ Cybersecurity</h3>
+                    <ul class="list-items">
+                        <li><a href="proyecto1.html" class="project-link">👉 <strong>Project 1: Hardening Linux</strong></a></li>
+                        <li><a href="#">Configuración Firewall iptables</a></li>
+                        <li><a href="#">Auditoría de Red con Nessus</a></li>
+                        <li><a href="#">Despliegue SIEM Wazuh</a></li>
+                        <li><a href="#">Gestión de Certificados SSL</a></li>
+                    </ul>
+                </article>
+
+                <article class="cat-card">
+                    <h3>☁️ Cloud & DevOps</h3>
+                    <ul class="list-items">
+                        <li><a href="proyecto2.html" class="project-link">👉 <strong>Proyecto 2: Despliegue Docker</strong></a></li>
+                        <li><a href="#">Cluster Kubernetes (K8s)</a></li>
+                        <li><a href="#">Pipeline CI/CD con Jenkins</a></li>
+                        <li><a href="#">Terraform AWS</a></li>
+                        <li><a href="#">Migración Azure</a></li>
+                    </ul>
+                </article>
+
+                <article class="cat-card">
+                    <h3>📡 Network</h3>
+                    <ul class="list-items">
+                        <li><a href="#">VPN WireGuard</a></li>
+                        <li><a href="#">VLANs & Routing</a></li>
+                        <li><a href="#">DNS Bind9</a></li>
+                        <li><a href="#">Proxy HAProxy</a></li>
+                        <li><a href="#">Monitorización Nagios</a></li>
+                    </ul>
+                </article>
+
+                <article class="cat-card">
+                    <h3>🖥️ Servers</h3>
+                    <ul class="list-items">
+                        <li><a href="#">Web Server Nginx</a></li>
+                        <li><a href="#">MySQL Cluster</a></li>
+                        <li><a href="#">Correo Postfix</a></li>
+                        <li><a href="#">Samba AD</a></li>
+                        <li><a href="#">Nextcloud</a></li>
+                    </ul>
+                </article>
+
+                <article class="cat-card">
+                    <h3>⚙️ Automatización</h3>
+                    <ul class="list-items">
+                        <li><a href="#">Backup Bash</a></li>
+                        <li><a href="#">Ansible Playbooks</a></li>
+                        <li><a href="#">Python Scripts</a></li>
+                        <li><a href="#">Log Rotation</a></li>
+                        <li><a href="#">Cron Jobs</a></li>
+                    </ul>
+                </article>
+
+            </div>
+
+        </main>
+
+        <footer class="area-footer glass-box">
+            <p>&copy; 2025 WebDev Group - Listado Completo</p>
+        </footer>
+
+    </div>
+    <script src="../js/java.js"></script>
 </body>
 </html>
