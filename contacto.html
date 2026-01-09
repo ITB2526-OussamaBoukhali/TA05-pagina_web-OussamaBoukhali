@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - SysAdmin</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="pagina-sin-sidebar">
+
+    <div class="layout-grid">
+
+        <aside class="area-logo glass-box">
+            <img src="../img/ITB-Logo.png" alt="Logo ITB" class="logo-img">
+        </aside>
+
+        <header class="area-header glass-box">
+            <h1 class="main-title">CONTACTO</h1>
+
+            <nav class="top-nav">
+                <a href="index.html" class="pill-btn">Inicio</a>
+                <a href="proyecto1.html" class="pill-btn">Proyecto 1</a>
+                <a href="proyecto2.html" class="pill-btn">Proyecto 2</a>
+                <a href="listadeproyectos.html" class="pill-btn">Listado</a>
+                <a href="contacto.html" class="pill-btn active">Contacto</a>
+            </nav>
+        </header>
+
+        <main class="area-main">
+
+            <section class="contact-section glass-box">
+                <h3>📩 Formulario de Contacto</h3>
+                <p class="contact-intro">Rellena los datos correctamente para enviarme un correo.</p>
+
+                <form action="https://formspree.io/f/mqeezkvv" method="POST" class="contact-form">
+
+                    <div class="input-group">
+                        <label>Nombre Completo</label>
+                        <input type="text" name="nombre" placeholder="Tu nombre" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Teléfono</label>
+                        <input type="tel" name="telefono" placeholder="600123456" pattern="[0-9]{9}" title="El teléfono debe tener 9 dígitos" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Correo Electrónico</label>
+                        <input type="email" name="email" placeholder="ejemplo@gmail.com" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Observaciones / Mensaje</label>
+                        <textarea name="observaciones" rows="5" placeholder="Escribe aquí lo que necesites contarme..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="action-btn primary full-width">Enviar Datos</button>
+                </form>
+            </section>
+
+        </main>
+
+        <footer class="area-footer glass-box">
+            <p>&copy; 2025 - SysAdmin Portfolio</p>
+        </footer>
+
+    </div>
+
+    <script src="../js/java.js"></script>
+</body>
+</html>
