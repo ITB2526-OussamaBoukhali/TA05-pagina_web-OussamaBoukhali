@@ -355,40 +355,52 @@ ul {
 
 
 /* =========================================
-   9. RESPONSIVE (MOVIL)
+   9. RESPONSIVE (MOVIL) - VERSIÓN CORREGIDA (SCROLL ACTIVO)
    ========================================= */
 @media (max-width: 768px) {
 
-    /* 1. Cambiamos el Grid principal a una sola columna */
-    .layout-grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto 1fr auto;
-        grid-template-areas:
-            "logo"
-            "header"
-            "main"
-            "footer";
-        height: auto; /* Permitir scroll natural en móvil */
+    /* 1. ¡IMPORTANTE! LIBERAR EL SCROLL DEL CUERPO */
+    body {
+        height: auto !important;    /* La página puede ser tan larga como quiera */
+        overflow: auto !important;  /* Reactiva el deslizamiento táctil natural */
     }
 
-    /* 2. Ajustes del Logo */
+    /* 2. Cambiamos el Grid a una lista vertical simple */
+    .layout-grid {
+        display: flex;              /* Usamos Flex en vez de Grid para apilar */
+        flex-direction: column;     /* Uno debajo de otro */
+        height: auto;               /* Que crezca según el contenido */
+        width: 100%;
+        overflow: visible;
+    }
+
+    /* 3. El contenedor principal ya no tiene scroll interno, usa el del body */
+    .area-main {
+        overflow: visible !important;
+        height: auto !important;
+        padding: 20px;
+    }
+
+    /* 4. Ajustes del Logo */
     .area-logo {
         padding: 15px;
         border-right: none;
         border-bottom: 1px solid rgba(255,255,255,0.05);
+        display: flex;
+        justify-content: center;
     }
 
-    /* 3. Ajustes de la Cabecera */
+    /* 5. Ajustes de la Cabecera */
     .area-header {
-        flex-direction: column; /* Poner título arriba y botones abajo */
+        flex-direction: column;
         padding: 20px;
         gap: 20px;
     }
 
-    /* 4. MEJORA: Botones en cuadrícula (2 arriba, 2 abajo) */
+    /* 6. Botones en cuadrícula (2x2) fáciles de tocar */
     .top-nav {
         display: grid;
-        grid-template-columns: 1fr 1fr; /* Dos columnas del mismo ancho */
+        grid-template-columns: 1fr 1fr;
         gap: 10px;
         width: 100%;
     }
@@ -396,14 +408,15 @@ ul {
     .pill-btn {
         text-align: center;
         width: 100%;
-        padding: 10px; /* Un poco más grandes para el dedo */
+        padding: 12px; /* Más gorditos para el dedo */
     }
 
-    /* 5. Ajustes para la Home (Hero Section) */
+    /* 7. Ajustes Home (Hero Section) */
     .hero-section {
-        flex-direction: column-reverse; /* Foto arriba, texto abajo */
+        flex-direction: column-reverse;
         text-align: center;
         gap: 30px;
+        margin-top: 20px;
     }
 
     .hero-text {
@@ -412,39 +425,11 @@ ul {
 
     .hero-buttons {
         justify-content: center;
+        flex-direction: column; /* Botones uno debajo de otro en móvil */
+        gap: 10px;
     }
-}
-/* =========================================
-   BOTÓN DE CAMBIO DE IDIOMA
-   ========================================= */
 
-.lang-btn {
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: #fff;
-    padding: 8px 15px;
-    border-radius: 50px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    font-weight: bold;
-    transition: 0.3s;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.lang-btn:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: #fff;
-    transform: scale(1.05);
-}
-
-/* En móvil, queremos que se vea bien integrado */
-@media (max-width: 768px) {
-    .lang-btn {
-        width: 100%;
-        justify-content: center;
-        margin-bottom: 10px; /* Separarlo un poco */
-        background: rgba(255, 255, 255, 0.05);
+    .action-btn {
+        width: 100%; /* Botones anchos en móvil */
     }
 }
