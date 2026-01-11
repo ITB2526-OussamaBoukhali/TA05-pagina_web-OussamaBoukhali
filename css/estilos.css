@@ -549,3 +549,232 @@ ul {
     transform: scale(0.95); /* Efecto de "presionar botón físico" */
     box-shadow: 0 2px 10px rgba(37, 99, 235, 0.3);
 }
+/* =========================================
+   ESTILOS PARA LA FOTO GRANDE (MARCO)
+   ========================================= */
+
+.project-detail {
+    padding: 30px;
+    max-width: 1000px; /* Ancho máximo de la caja de contenido */
+    margin: 0 auto;    /* Centrado */
+}
+
+.project-intro {
+    font-size: 1.1rem;
+    color: #cbd5e1;
+    margin-bottom: 30px;
+    max-width: 800px;
+}
+
+/* EL CONTENEDOR "MARCO" */
+.big-image-frame {
+    display: block;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05); /* Fondo sutil del marco */
+    padding: 15px;       /* Grosor del marco */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Borde fino brillante */
+    border-radius: 15px; /* Esquinas redondeadas del marco */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5); /* Sombra profunda */
+    margin-bottom: 30px;
+    transition: transform 0.3s ease; /* Pequeña animación */
+}
+
+/* Efecto al pasar el ratón por el marco */
+.big-image-frame:hover {
+    transform: scale(1.01); /* Se acerca un poquito */
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* LA IMAGEN DENTRO DEL MARCO */
+.big-image-frame img {
+    width: 100%;
+    height: auto;        /* Mantiene la proporción (no se estira) */
+    border-radius: 10px; /* Redondea también la foto */
+    display: block;      /* Elimina huecos extraños abajo */
+}
+
+/* Títulos y texto extra */
+.project-body h3 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.project-body p {
+    color: #94a3b8;
+    line-height: 1.6;
+}
+/* =========================================
+   ESTILOS MEJORADOS - PROYECTO 1
+   ========================================= */
+
+/* 1. La lista de puntos con iconos */
+.feature-list {
+    list-style: none;
+    padding: 0;
+    display: flex;       /* Hacemos que la lista sea flexible */
+    flex-direction: column; /* Un elemento debajo de otro */
+    gap: 20px;           /* Espacio entre cada caja */
+}
+
+.feature-list > li {
+    display: flex;       /* IMPORTANTE: Pone el icono AL LADO del texto */
+    align-items: flex-start; /* Alinea arriba */
+    gap: 20px;           /* Separación entre icono y texto */
+    background: rgba(255, 255, 255, 0.05); /* Fondo grisáceo suave */
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* El contenedor del icono para que no se mueva */
+.feature-list .icon {
+    font-size: 2rem;      /* Icono más grande */
+    min-width: 50px;      /* Ancho fijo para el icono */
+    text-align: center;
+    padding-top: 5px;     /* Pequeño ajuste visual */
+}
+
+/* El texto al lado del icono */
+.feature-list div {
+    flex: 1; /*
+}
+
+.feature-list strong {
+    color: #fff;
+    font-size: 1.15rem;
+    display: block;       /* El título en su propia línea */
+    margin-bottom: 8px;
+}
+
+/* 2. Las etiquetas (Tags) de tecnología */
+.tech-section {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap; /* Si no caben, bajan */
+    gap: 12px;       /* Espacio entre botones */
+    margin-top: 15px;
+}
+
+/* Diseño de cada botón azul */
+.tag {
+    background: rgba(59, 130, 246, 0.2);
+    color: #93c5fd;
+    padding: 8px 16px;
+    border-radius: 50px; /* Bordes redondos */
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 1px solid rgba(59, 130, 246, 0.4);
+    white-space: nowrap; /* Que no se parta el texto */
+}
+/* =========================================
+   ESTILOS PROYECTO 1 - BOTONES Y LISTA
+   ========================================= */
+
+/* BOTONES DE ACCIÓN */
+.action-buttons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.btn-download {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.2s;
+}
+
+.btn-download:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+}
+
+.btn-toggle {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+.btn-toggle:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* CONTENIDO OCULTO */
+.hidden-content {
+    display: none; /* Oculto por defecto */
+    animation: slideDown 0.4s ease;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* LISTA ORGANIZADA (Icono izquierda - Texto derecha) */
+.feature-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.feature-list > li {
+    display: flex;            /* Flexbox para alinear icono y texto */
+    align-items: flex-start;  /* Alineados arriba */
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.feature-list .icon {
+    font-size: 2rem;
+    min-width: 40px; /* Ancho fijo para que no baile */
+}
+
+.sub-list {
+    margin-top: 8px;
+    padding-left: 20px;
+    list-style: disc;
+    color: #cbd5e1;
+}
+
+/* ETIQUETAS (TAGS) */
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.tag {
+    background: rgba(59, 130, 246, 0.15);
+    color: #93c5fd;
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+.highlight { color: #60a5fa; font-weight: bold; }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto 1 - WebDev</title>
+    <title>Enrutamiento y ACLs</title>
     <link rel="stylesheet" href="css/estilos.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -12,11 +12,13 @@
     <div class="layout-grid">
 
         <aside class="area-logo glass-box">
-            <img src="img/ITB-Logo.png" alt="Logo ITB" class="logo-img">
+            <a href="index.html">
+                <img src="img/ITB-Logo.png" alt="Logo ITB" class="logo-img">
+            </a>
         </aside>
 
         <header class="area-header glass-box">
-            <h1 class="main-title">GESTIÓN DE TAREAS</h1>
+            <h1 class="main-title">Enrutamiento y ACLs</h1>
             <nav class="top-nav">
                 <a href="index.html" class="pill-btn">Inicio</a>
                 <a href="proyecto1.html" class="pill-btn active">Proyecto 1</a>
@@ -26,35 +28,121 @@
             </nav>
         </header>
 
-        <main class="area-main project-content">
+        <main class="area-main">
 
-            <div class="project-info">
-                <h2>Proyecto 1</h2>
-                <p>Esta es una explicación detallada del proyecto. Aquí describimos cómo funciona la gestión de tareas, las tecnologías utilizadas y los objetivos alcanzados.</p>
-            </div>
+            <section class="project-detail glass-box">
 
-            <div class="project-gallery">
-                <div class="img-box">IMG 1</div>
-                <div class="img-box">IMG 2</div>
-                <div class="img-box">IMG 3</div>
-            </div>
+                <div class="project-header">
+                    <h2>Enrutamiento Estático y ACLs (ITB Holding)</h2>
+                    <p class="project-intro">
+                        Configuración de la infraestructura de red para la empresa "ITB Holding".
+                        El proyecto abarca la interconexión de sedes mediante rutas estáticas y flotantes,
+                        así como el aseguramiento de la red interna usando Listas de Control de Acceso (ACLs).
+                    </p>
+                </div>
 
-            <div class="project-nav-row">
-                <a href="index.html" class="action-btn outline">PÁGINA PRINCIPAL</a>
-                <a href="proyecto2.html" class="action-btn outline">PROYECTO 2</a>
-            </div>
+                <div class="big-image-frame">
+                    <img src="img/proyecto1foto.png" alt="Topología de red ITB Holding">
+                </div>
 
-            <div class="project-download-row">
-                <a href="#" class="action-btn download">DESCARGAR PROYECTO 1</a>
-            </div>
+                <div class="project-body">
+                    <h3>💡 Desafíos Técnicos Resueltos</h3>
+                    <p style="margin-bottom: 20px; color: #cbd5e1;">
+                        Este escenario simula un entorno crítico con redundancia y seguridad. Puedes descargar el archivo fuente o desplegar los detalles.
+                    </p>
+
+                    <div class="action-buttons">
+                        <a href="docs/PracticaRA4OussamaBoukhali.pkt" download class="btn-download">
+                            📥 Descargar Proyecto (.pkt)
+                        </a>
+
+                        <button id="btnToggle" class="btn-toggle" onclick="toggleDetalles()">
+                            Ver detalles técnicos ▼
+                        </button>
+                    </div>
+
+                    <div id="detallesOcultos" class="hidden-content">
+
+                        <ul class="feature-list">
+                            <li>
+                                <span class="icon">🔀</span>
+                                <div>
+                                    <strong>Enrutamiento y Redundancia</strong>
+                                    <p>Configuración de rutas estáticas en R1, R2 y R3. Se implementó una <span class="highlight">Ruta Flotante</span> por la Subred H para garantizar conexión si cae la Subred F.</p>
+                                </div>
+                            </li>
+
+                            <li>
+                                <span class="icon">🌐</span>
+                                <div>
+                                    <strong>Salida a Internet</strong>
+                                    <p>Configuración de <em>Default Route</em> en el router R1 hacia el ISP, permitiendo acceso web a toda la empresa.</p>
+                                </div>
+                            </li>
+
+                            <li>
+                                <span class="icon">🛡️</span>
+                                <div>
+                                    <strong>Seguridad (ACLs)</strong>
+                                    <p>Implementación de políticas de firewall estrictas:</p>
+                                    <ul class="sub-list">
+                                        <li>❌ Bloqueo total del host <em>PCC2</em> (Subred C).</li>
+                                        <li>🔒 La <em>Subred A</em> solo permite tráfico HTTP (80) y DNS (53).</li>
+                                        <li>🚫 La <em>Subred E</em> tiene bloqueada la navegación web.</li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="tech-section">
+                            <h4>🛠️ Tecnologías:</h4>
+                            <div class="tech-tags">
+                                <span class="tag">Cisco Packet Tracer</span>
+                                <span class="tag">Static Routing</span>
+                                <span class="tag">Floating Routes</span>
+                                <span class="tag">ACLs Standard/Extended</span>
+                                <span class="tag">VLSM</span>
+                            </div>
+                        </div>
+
+                    </div> </div>
+
+                <div style="margin-top: 40px; text-align: center;">
+                    <a href="listadeproyectos.html" class="action-btn outline">Volver al Listado</a>
+                </div>
+
+            </section>
 
         </main>
 
         <footer class="area-footer glass-box">
-            <p>&copy; 2025 WebDev Group - Proyecto 1</p>
+            <p>&copy; 2025 - SysAdmin Portfolio</p>
         </footer>
 
     </div>
+
     <script src="js/java.js"></script>
+<script>
+        function toggleDetalles() {
+            var contenido = document.getElementById("detallesOcultos");
+            var boton = document.getElementById("btnToggle");
+
+            // Esto asegura que leemos el estilo real
+            var estiloReal = window.getComputedStyle(contenido).display;
+
+            if (estiloReal === "none") {
+                // MOSTRAR
+                contenido.style.display = "block";
+                boton.innerHTML = "Ver menos detalles ▲";
+                boton.style.background = "rgba(59, 130, 246, 0.3)";
+            } else {
+                // OCULTAR
+                contenido.style.display = "none";
+                boton.innerHTML = "Ver detalles técnicos ▼";
+                boton.style.background = "rgba(255, 255, 255, 0.1)";
+            }
+        }
+    </script>
+</body>
 </body>
 </html>
