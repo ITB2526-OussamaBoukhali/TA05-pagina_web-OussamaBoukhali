@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto 2 - WebDev</title>
+    <title>Proyecto 2 - VLANs y DHCP</title>
     <link rel="stylesheet" href="css/estilos.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -12,49 +12,134 @@
     <div class="layout-grid">
 
         <aside class="area-logo glass-box">
-            <img src="img/ITB-Logo.png" alt="Logo ITB" class="logo-img">
+            <a href="index.html">
+                <img src="img/ITB-Logo.png" alt="Logo ITB" class="logo-img">
+            </a>
         </aside>
 
         <header class="area-header glass-box">
-            <h1 class="main-title">GALERÍA INTERACTIVA</h1>
+            <h1 class="main-title">SEGMENTACIÓN Y DHCP</h1>
             <nav class="top-nav">
                 <a href="index.html" class="pill-btn">Inicio</a>
                 <a href="proyecto1.html" class="pill-btn">Proyecto 1</a>
-                <a href="proyecto2.html" class="pill-btn active">Proyectoo 2</a>
+                <a href="proyecto2.html" class="pill-btn active">Proyecto 2</a>
                 <a href="listadeproyectos.html" class="pill-btn">Listado</a>
                 <a href="contacto.html" class="pill-btn">Contacto</a>
             </nav>
         </header>
 
-        <main class="area-main project-content">
+        <main class="area-main">
 
-            <div class="project-info">
-                <h2>Proyecto 2</h2>
-                <p>En este segundo proyecto exploramos la creación de galerías dinámicas y el uso de Grid Layout avanzado.</p>
-            </div>
+            <section class="project-detail glass-box">
 
-            <div class="project-gallery">
-                <div class="img-box">IMG A</div>
-                <div class="img-box">IMG B</div>
-                <div class="img-box">IMG C</div>
-            </div>
+                <div class="project-header">
+                    <h2>Segmentación de Red (VLANs) y DHCP</h2>
+                    <p class="project-intro">
+                        Diseño e implementación de una arquitectura de red corporativa segmentada.
+                        El proyecto separa lógicamente los departamentos mediante VLANs, gestiona el tráfico con enrutamiento Inter-VLAN
+                        y automatiza la asignación de direcciones IPs.
+                    </p>
+                </div>
 
-            <div class="project-nav-row">
-                <a href="proyecto1.html" class="action-btn outline">PROYECTO 1</a>
-                <a href="listadeproyectos.html" class="action-btn outline">VER LISTADO</a>
-            </div>
+                <div class="big-image-frame">
+                    <img src="img/proyecto2foto.png" alt="Topología VLANs y DHCP">
+                </div>
 
-            <div class="project-download-row">
-                <a href="#" class="action-btn download">DESCARGAR PROYECTO 2</a>
-            </div>
+                <div class="project-body">
+                    <h3>💡 Desafíos Técnicos Resueltos</h3>
+                    <p style="margin-bottom: 20px; color: #cbd5e1;">
+                        Optimización de la seguridad y el rendimiento de la red mediante segmentación lógica.
+                        Descarga el archivo fuente o despliega los detalles a continuación.
+                    </p>
+
+                    <div class="action-buttons">
+                        <a href="docs/Segmentation&DHCP.pka" download class="btn-download">
+                            📥 Descargar Proyecto
+                        </a>
+
+                        <button id="btnToggle" class="btn-toggle" onclick="toggleDetalles()">
+                            Ver detalles técnicos ▼
+                        </button>
+                    </div>
+
+                    <div id="detallesOcultos" class="hidden-content">
+
+                        <ul class="feature-list">
+                            <li>
+                                <span class="icon">🏢</span>
+                                <div>
+                                    <strong>Segmentación Lógica (VLANs)</strong>
+                                    <p>Creación de redes virtuales separadas para aislar el tráfico y mejorar la seguridad:</p>
+                                    <ul class="sub-list">
+                                        <li>🔹 <strong>VLAN 10:</strong> Departamento de Ventas.</li>
+                                        <li>🔸 <strong>VLAN 20:</strong> Departamento de Administración.</li>
+                                        <li>Implementación en switches de planta (01_Planta1, 01_Planta3) y central (ITB1).</li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li>
+                                <span class="icon">🔀</span>
+                                <div>
+                                    <strong>Enrutamiento Inter-VLAN</strong>
+                                    <p>Configuración de "Router-on-a-Stick" en el Router Central para permitir la comunicación controlada entre las VLANs y el servidor compartido, utilizando subinterfaces 802.1Q.</p>
+                                </div>
+                            </li>
+
+                            <li>
+                                <span class="icon">⚙️</span>
+                                <div>
+                                    <strong>Automatización (DHCP Server)</strong>
+                                    <p>Despliegue de servicio DHCP en el router Cisco para la red de Ventas. Se configuraron exclusiones para las primeras 20 IPs (reservadas para estáticos) y asignación dinámica para nuevos hosts.</p>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="tech-section">
+                            <h4>🛠️ Tecnologías:</h4>
+                            <div class="tech-tags">
+                                <span class="tag">Cisco Packet Tracer</span>
+                                <span class="tag">VLANs (802.1Q)</span>
+                                <span class="tag">Inter-VLAN Routing</span>
+                                <span class="tag">DHCP Server</span>
+                                <span class="tag">Trunking & Native VLAN</span>
+                            </div>
+                        </div>
+
+                    </div> </div>
+
+                <div style="margin-top: 40px; text-align: center;">
+                    <a href="listadeproyectos.html" class="action-btn outline">Volver al Listado</a>
+                </div>
+
+            </section>
 
         </main>
 
         <footer class="area-footer glass-box">
-            <p>&copy; 2025 WebDev Group - Proyecto 2</p>
+            <p>&copy; 2025 - SysAdmin Portfolio</p>
         </footer>
 
     </div>
-    <script src="js/java.js"></script>
+
+    <script>
+        function toggleDetalles() {
+            var contenido = document.getElementById("detallesOcultos");
+            var boton = document.getElementById("btnToggle");
+
+            // Leemos el estilo real calculado por el navegador
+            var estiloReal = window.getComputedStyle(contenido).display;
+
+            if (estiloReal === "none") {
+                contenido.style.display = "block";
+                boton.innerHTML = "Ver menos detalles ▲";
+                boton.style.background = "rgba(59, 130, 246, 0.3)";
+            } else {
+                contenido.style.display = "none";
+                boton.innerHTML = "Ver detalles técnicos ▼";
+                boton.style.background = "rgba(255, 255, 255, 0.1)";
+            }
+        }
+    </script>
 </body>
 </html>
