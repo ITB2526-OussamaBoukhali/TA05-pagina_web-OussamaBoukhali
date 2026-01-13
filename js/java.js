@@ -1,76 +1,127 @@
-// 1. DICCIONARIO DE TRADUCCIONES
-const translations = {
-    es: {
-        header_title: "MIi PORTFOLIO",
-        nav_home: "Inicio",
-        nav_p1: "Proyecto 1",
-        nav_p2: "Proyecto 2",
-        nav_list: "Listado",
-        hero_subtitle: "👋 Hola, bienvenido a mi rincón digital",
-        hero_title: "Soy <span class='highlight'>SysAdmin & DevOps</span><br>en formación.",
-        hero_desc: "Estudiante del ITB apasionado por la ciberseguridad, la automatización de servidores y el despliegue en la nube.",
-        btn_projects: "Ver mis Proyectos",
-        btn_cv: "Descargar CV",
-        skills_title: "🛠️ Mi Stack Tecnológico",
-        latest_work: "🚀 Últimos Trabajos",
-        footer_text: "&copy; 2025 - Diseñado y Programado por Mí"
-    },
-    en: {
-        header_title: "MY PORTFOLIO",
-        nav_home: "Home",
-        nav_p1: "Project 1",
-        nav_p2: "Project 2",
-        nav_list: "List",
-        hero_subtitle: "👋 Hi, welcome to my digital corner",
-        hero_title: "I am a <span class='highlight'>SysAdmin & DevOps</span><br>in training.",
-        hero_desc: "ITB student passionate about cybersecurity, server automation, and cloud deployment.",
-        btn_projects: "View Projects",
-        btn_cv: "Download CV",
-        skills_title: "🛠️ My Tech Stack",
-        latest_work: "🚀 Latest Work",
-        footer_text: "&copy; 2025 - Designed & Coded by Me"
-    }
-};
-
-// 2. LÓGICA DEL BOTÓN
-const langToggleBtn = document.getElementById('lang-toggle');
-let currentLang = localStorage.getItem('lang') || 'es'; // Recuerda el idioma guardado o usa español
-
-// Función para actualizar textos
-function updateLanguage(lang) {
-    // Cambiar textos
-    const elements = document.querySelectorAll('[data-translate]');
-    elements.forEach(element => {
-        const key = element.getAttribute('data-translate');
-        if (translations[lang][key]) {
-            element.innerHTML = translations[lang][key]; // innerHTML permite etiquetas como <br> o <span>
-        }
-    });
-
-    // Cambiar botón
-    if (lang === 'es') {
-        langToggleBtn.innerHTML = "🇺🇸 EN"; // Si estamos en ES, ofrece cambiar a EN
-    } else {
-        langToggleBtn.innerHTML = "🇪🇸 ES"; // Si estamos en EN, ofrece cambiar a ES
-    }
-
-    // Guardar preferencia
-    localStorage.setItem('lang', lang);
-    currentLang = lang;
-}
-
-// Al cargar la página, aplicar el idioma guardado
 document.addEventListener('DOMContentLoaded', () => {
-    updateLanguage(currentLang);
-});
 
-// Al hacer clic en el botón
-if(langToggleBtn){
-    langToggleBtn.addEventListener('click', () => {
-        if (currentLang === 'es') {
-            updateLanguage('en');
-        } else {
-            updateLanguage('es');
+    // ==========================================
+    // 1. FUNCIONALIDAD: EFECTO MÁQUINA DE ESCRIBIR
+    // ==========================================
+    const titleElement = document.querySelector('.intro-box h2');
+
+    if(titleElement) {
+        const originalText = titleElement.innerText;
+        titleElement.innerText = '';
+
+        let i = 0;
+        const speed = 100;
+
+        function typeWriter() {
+            if (i < originalText.length) {
+                titleElement.innerHTML += originalText.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+        typeWriter();
+    }
+
+    // ==========================================
+    // 2. FUNCIONALIDAD: BUSCADOR EN TIEMPO REAL
+    // ==========================================
+    const searchInput = document.getElementById('searchInput');
+    const cards = document.querySelectorAll('.cat-card');
+
+    if(searchInput) {
+        searchInput.addEventListener('keyup', (e) => {
+            const term = e.target.value.toLowerCase();
+
+            cards.forEach(card => {
+                const listItems = card.querySelectorAll('li');
+                let hasMatch = false;
+
+                listItems.forEach(item => {
+                    const text = item.textContent.toLowerCase();
+                    if(text.includes(term)) {
+                        item.style.display = 'block';
+                        hasMatch = true;
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+
+                if(hasMatch) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    }
+
+    // ==========================================
+    // 3. FUNCIONALIDAD: BOTÓN VOLVER ARRIBA
+    // ==========================================
+    const scrollBtn = document.getElementById("scrollTopBtn");
+
+    if(scrollBtn) {
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                scrollBtn.style.display = "block";
+            } else {
+                scrollBtn.style.display = "none";
+            }
+        };
+
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    // ==========================================
+    // 4. NUEVA FUNCIONALIDAD: VISOR DE IMÁGENES (LIGHTBOX)
+    // ==========================================
+
+    // 1. Crear el HTML del modal dinámicamente (para no ensuciar tu HTML)
+    const modalHTML = `
+        <div id="lightbox-modal">
+            <span id="lightbox-close">&times;</span>
+            <img id="lightbox-img" src="">
+        </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+
+    // 2. Seleccionar elementos creados
+    const modal = document.getElementById('lightbox-modal');
+    const modalImg = document.getElementById('lightbox-img');
+    const closeBtn = document.getElementById('lightbox-close');
+
+    // 3. Buscar imágenes que queremos ampliar
+    // Buscamos las imágenes dentro de 'big-image-frame' o 'project-hero-img'
+    const images = document.querySelectorAll('.big-image-frame img, .project-hero-img');
+
+    images.forEach(img => {
+        // Añadimos clase para cursor de lupa
+        img.classList.add('zoomable-img');
+
+        // Al hacer clic en la imagen
+        img.addEventListener('click', function() {
+            modal.style.display = "flex"; // Mostrar modal
+            modalImg.src = this.src;      // Poner la misma foto
+        });
+    });
+
+    // 4. Función para cerrar
+    function closeModal() {
+        modal.style.display = "none";
+    }
+
+    // Cerrar al pulsar la X
+    closeBtn.addEventListener('click', closeModal);
+
+    // Cerrar al pulsar fuera de la imagen (en el fondo negro)
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModal();
         }
     });
-}
+});

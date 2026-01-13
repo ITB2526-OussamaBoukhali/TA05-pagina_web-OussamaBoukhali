@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enrutamiento y ACLs</title>
+    <title>Project 1 - Routing & ACLs</title>
     <link rel="stylesheet" href="css/estilos.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -18,7 +18,7 @@
         </aside>
 
         <header class="area-header glass-box">
-            <h1 class="main-title">Enrutamiento y ACLs</h1>
+            <h1 class="main-title">Routing & ACLs</h1>
             <nav class="top-nav">
                 <a href="index.html" class="pill-btn">Inicio</a>
                 <a href="proyecto1.html" class="pill-btn active">Proyecto 1</a>
@@ -34,6 +34,7 @@
 
                 <div class="project-header">
                     <h2>Enrutamiento Estático y ACLs (ITB Holding)</h2>
+
                     <p class="project-intro">
                         Configuración de la infraestructura de red para la empresa "ITB Holding".
                         El proyecto abarca la interconexión de sedes mediante rutas estáticas y flotantes,
@@ -105,7 +106,8 @@
                             </div>
                         </div>
 
-                    </div> </div>
+                    </div>
+                </div>
 
                 <div style="margin-top: 40px; text-align: center;">
                     <a href="listadeproyectos.html" class="action-btn outline">Volver al Listado</a>
@@ -122,27 +124,23 @@
     </div>
 
     <script src="js/java.js"></script>
-<script>
+    <script>
         function toggleDetalles() {
             var contenido = document.getElementById("detallesOcultos");
             var boton = document.getElementById("btnToggle");
 
-            // Esto asegura que leemos el estilo real
             var estiloReal = window.getComputedStyle(contenido).display;
 
             if (estiloReal === "none") {
-                // MOSTRAR
                 contenido.style.display = "block";
                 boton.innerHTML = "Ver menos detalles ▲";
                 boton.style.background = "rgba(59, 130, 246, 0.3)";
             } else {
-                // OCULTAR
                 contenido.style.display = "none";
                 boton.innerHTML = "Ver detalles técnicos ▼";
                 boton.style.background = "rgba(255, 255, 255, 0.1)";
             }
         }
     </script>
-</body>
 </body>
 </html>
