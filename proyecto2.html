@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto 2 - VLANs y DHCP</title>
+    <title>Project 2 - VLANs & DHCP</title>
     <link rel="stylesheet" href="css/estilos.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -13,18 +13,18 @@
 
         <aside class="area-logo glass-box">
             <a href="index.html">
-                <img src="img/ITB-Logo.png" alt="Logo ITB" class="logo-img">
+                <img src="img/ITB-Logo.png" alt="ITB Logo" class="logo-img">
             </a>
         </aside>
 
         <header class="area-header glass-box">
-            <h1 class="main-title">SEGMENTACIÓN Y DHCP</h1>
+            <h1 class="main-title">SEGMENTATION AND DHCP</h1>
             <nav class="top-nav">
-                <a href="index.html" class="pill-btn">Inicio</a>
-                <a href="proyecto1.html" class="pill-btn">Proyecto 1</a>
-                <a href="proyecto2.html" class="pill-btn active">Proyecto 2</a>
-                <a href="listadeproyectos.html" class="pill-btn">Listado</a>
-                <a href="contacto.html" class="pill-btn">Contacto</a>
+                <a href="index.html" class="pill-btn">Home</a>
+                <a href="proyecto1.html" class="pill-btn">Routing</a>
+                <a href="proyecto2.html" class="pill-btn active">Segmentation</a>
+                <a href="listadeproyectos.html" class="pill-btn">List</a>
+                <a href="contacto.html" class="pill-btn">Contact</a>
             </nav>
         </header>
 
@@ -33,32 +33,32 @@
             <section class="project-detail glass-box">
 
                 <div class="project-header">
-                    <h2>Segmentación de Red (VLANs) y DHCP</h2>
+                    <h2>Network Segmentation (VLANs) and DHCP</h2>
                     <p class="project-intro">
-                        Diseño e implementación de una arquitectura de red corporativa segmentada.
-                        El proyecto separa lógicamente los departamentos mediante VLANs, gestiona el tráfico con enrutamiento Inter-VLAN
-                        y automatiza la asignación de direcciones IPs.
+                        Design and implementation of a segmented corporate network architecture.
+                        The project logically separates departments using VLANs, manages traffic with Inter-VLAN routing,
+                        and automates IP address assignment.
                     </p>
                 </div>
 
                 <div class="big-image-frame">
-                    <img src="img/proyecto2foto.png" alt="Topología VLANs y DHCP">
+                    <img src="img/proyecto2foto.png" alt="VLANs and DHCP Topology">
                 </div>
 
                 <div class="project-body">
-                    <h3>💡 Desafíos Técnicos Resueltos</h3>
+                    <h3>💡 Solved Technical Challenges</h3>
                     <p style="margin-bottom: 20px; color: #cbd5e1;">
-                        Optimización de la seguridad y el rendimiento de la red mediante segmentación lógica.
-                        Descarga el archivo fuente o despliega los detalles a continuación.
+                        Optimization of network security and performance through logical segmentation.
+                        Download the source file or expand the details below.
                     </p>
 
                     <div class="action-buttons">
                         <a href="docs/Segmentation&DHCP.pka" download class="btn-download">
-                            📥 Descargar Proyecto
+                            📥 Download Project
                         </a>
 
                         <button id="btnToggle" class="btn-toggle" onclick="toggleDetalles()">
-                            Ver detalles técnicos ▼
+                            View technical details ▼
                         </button>
                     </div>
 
@@ -68,12 +68,12 @@
                             <li>
                                 <span class="icon">🏢</span>
                                 <div>
-                                    <strong>Segmentación Lógica (VLANs)</strong>
-                                    <p>Creación de redes virtuales separadas para aislar el tráfico y mejorar la seguridad:</p>
+                                    <strong>Logical Segmentation (VLANs)</strong>
+                                    <p>Creation of separate virtual networks to isolate traffic and improve security:</p>
                                     <ul class="sub-list">
-                                        <li>🔹 <strong>VLAN 10:</strong> Departamento de Ventas.</li>
-                                        <li>🔸 <strong>VLAN 20:</strong> Departamento de Administración.</li>
-                                        <li>Implementación en switches de planta (01_Planta1, 01_Planta3) y central (ITB1).</li>
+                                        <li>🔹 <strong>VLAN 10:</strong> Sales Department.</li>
+                                        <li>🔸 <strong>VLAN 20:</strong> Administration Department.</li>
+                                        <li>Implementation on floor switches (01_Planta1, 01_Planta3) and central switch (ITB1).</li>
                                     </ul>
                                 </div>
                             </li>
@@ -81,22 +81,22 @@
                             <li>
                                 <span class="icon">🔀</span>
                                 <div>
-                                    <strong>Enrutamiento Inter-VLAN</strong>
-                                    <p>Configuración de "Router-on-a-Stick" en el Router Central para permitir la comunicación controlada entre las VLANs y el servidor compartido, utilizando subinterfaces 802.1Q.</p>
+                                    <strong>Inter-VLAN Routing</strong>
+                                    <p>Configuration of "Router-on-a-Stick" on the Central Router to allow controlled communication between VLANs and the shared server, using 802.1Q subinterfaces.</p>
                                 </div>
                             </li>
 
                             <li>
                                 <span class="icon">⚙️</span>
                                 <div>
-                                    <strong>Automatización (DHCP Server)</strong>
-                                    <p>Despliegue de servicio DHCP en el router Cisco para la red de Ventas. Se configuraron exclusiones para las primeras 20 IPs (reservadas para estáticos) y asignación dinámica para nuevos hosts.</p>
+                                    <strong>Automation (DHCP Server)</strong>
+                                    <p>Deployment of DHCP service on the Cisco router for the Sales network. Exclusions were configured for the first 20 IPs (reserved for static) and dynamic assignment for new hosts.</p>
                                 </div>
                             </li>
                         </ul>
 
                         <div class="tech-section">
-                            <h4>🛠️ Tecnologías:</h4>
+                            <h4>🛠️ Technologies:</h4>
                             <div class="tech-tags">
                                 <span class="tag">Cisco Packet Tracer</span>
                                 <span class="tag">VLANs (802.1Q)</span>
@@ -109,7 +109,7 @@
                     </div> </div>
 
                 <div style="margin-top: 40px; text-align: center;">
-                    <a href="listadeproyectos.html" class="action-btn outline">Volver al Listado</a>
+                    <a href="listadeproyectos.html" class="action-btn outline">Back to List</a>
                 </div>
 
             </section>
@@ -117,7 +117,7 @@
         </main>
 
         <footer class="area-footer glass-box">
-            <p>&copy; 2025 - SysAdmin Portfolio</p>
+            <p>&copy; Made by Oussama and cooked by Gemini</p>
         </footer>
 
     </div>
@@ -127,16 +127,16 @@
             var contenido = document.getElementById("detallesOcultos");
             var boton = document.getElementById("btnToggle");
 
-            // Leemos el estilo real calculado por el navegador
+            // We read the actual style calculated by the browser
             var estiloReal = window.getComputedStyle(contenido).display;
 
             if (estiloReal === "none") {
                 contenido.style.display = "block";
-                boton.innerHTML = "Ver menos detalles ▲";
+                boton.innerHTML = "View less details ▲";
                 boton.style.background = "rgba(59, 130, 246, 0.3)";
             } else {
                 contenido.style.display = "none";
-                boton.innerHTML = "Ver detalles técnicos ▼";
+                boton.innerHTML = "View technical details ▼";
                 boton.style.background = "rgba(255, 255, 255, 0.1)";
             }
         }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,18 +13,18 @@
 
         <aside class="area-logo glass-box">
             <a href="index.html">
-                <img src="img/ITB-Logo.png" alt="Logo ITB" class="logo-img">
+                <img src="img/ITB-Logo.png" alt="ITB Logo" class="logo-img">
             </a>
         </aside>
 
         <header class="area-header glass-box">
             <h1 class="main-title">Routing & ACLs</h1>
             <nav class="top-nav">
-                <a href="index.html" class="pill-btn">Inicio</a>
-                <a href="proyecto1.html" class="pill-btn active">Proyecto 1</a>
-                <a href="proyecto2.html" class="pill-btn">Proyecto 2</a>
-                <a href="listadeproyectos.html" class="pill-btn">Listado</a>
-                <a href="contacto.html" class="pill-btn">Contacto</a>
+                <a href="index.html" class="pill-btn">Home</a>
+                <a href="proyecto1.html" class="pill-btn active">Routing</a>
+                <a href="proyecto2.html" class="pill-btn">Segmentation</a>
+                <a href="listadeproyectos.html" class="pill-btn">List</a>
+                <a href="contacto.html" class="pill-btn">Contact</a>
             </nav>
         </header>
 
@@ -33,32 +33,34 @@
             <section class="project-detail glass-box">
 
                 <div class="project-header">
-                    <h2>Enrutamiento Estático y ACLs (ITB Holding)</h2>
+                    <h2>Static Routing and ACLs (ITB Holding)</h2>
 
                     <p class="project-intro">
-                        Configuración de la infraestructura de red para la empresa "ITB Holding".
-                        El proyecto abarca la interconexión de sedes mediante rutas estáticas y flotantes,
-                        así como el aseguramiento de la red interna usando Listas de Control de Acceso (ACLs).
+                        Network infrastructure configuration for ITB Holding.
+
+                        The project encompasses the interconnection of branches using static and floating routes,
+
+                        as well as securing the internal network using Access Control Lists (ACLs).
                     </p>
                 </div>
 
                 <div class="big-image-frame">
-                    <img src="img/proyecto1foto.png" alt="Topología de red ITB Holding">
+                    <img src="img/proyecto1foto.png" alt="ITB Holding Network Topology">
                 </div>
 
                 <div class="project-body">
-                    <h3>💡 Desafíos Técnicos Resueltos</h3>
+                    <h3>💡 Solved Technical Challenges</h3>
                     <p style="margin-bottom: 20px; color: #cbd5e1;">
-                        Este escenario simula un entorno crítico con redundancia y seguridad. Puedes descargar el archivo fuente o desplegar los detalles.
+                        This scenario simulates a critical environment with redundancy and security. You can download the source file or expand the details.
                     </p>
 
                     <div class="action-buttons">
                         <a href="docs/Routing&ACLs.pkt" download class="btn-download">
-                            📥 Descargar Proyecto
+                            📥 Download Project
                         </a>
 
                         <button id="btnToggle" class="btn-toggle" onclick="toggleDetalles()">
-                            Ver detalles técnicos ▼
+                            View technical details ▼
                         </button>
                     </div>
 
@@ -68,35 +70,35 @@
                             <li>
                                 <span class="icon">🔀</span>
                                 <div>
-                                    <strong>Enrutamiento y Redundancia</strong>
-                                    <p>Configuración de rutas estáticas en R1, R2 y R3. Se implementó una <span class="highlight">Ruta Flotante</span> por la Subred H para garantizar conexión si cae la Subred F.</p>
+                                    <strong>Routing and Redundancy</strong>
+                                    <p>Configuration of static routes on R1, R2, and R3. A <span class="highlight">Floating Route</span> was implemented via Subnet H to ensure connection if Subnet F fails.</p>
                                 </div>
                             </li>
 
                             <li>
                                 <span class="icon">🌐</span>
                                 <div>
-                                    <strong>Salida a Internet</strong>
-                                    <p>Configuración de <em>Default Route</em> en el router R1 hacia el ISP, permitiendo acceso web a toda la empresa.</p>
+                                    <strong>Internet Access</strong>
+                                    <p>Configuration of a <em>Default Route</em> on router R1 towards the ISP, allowing web access for the entire company.</p>
                                 </div>
                             </li>
 
                             <li>
                                 <span class="icon">🛡️</span>
                                 <div>
-                                    <strong>Seguridad (ACLs)</strong>
-                                    <p>Implementación de políticas de firewall estrictas:</p>
+                                    <strong>Security (ACLs)</strong>
+                                    <p>Implementation of strict firewall policies:</p>
                                     <ul class="sub-list">
-                                        <li>❌ Bloqueo total del host <em>PCC2</em> (Subred C).</li>
-                                        <li>🔒 La <em>Subred A</em> solo permite tráfico HTTP (80) y DNS (53).</li>
-                                        <li>🚫 La <em>Subred E</em> tiene bloqueada la navegación web.</li>
+                                        <li>❌ Total blocking of host <em>PCC2</em> (Subnet C).</li>
+                                        <li>🔒 <em>Subnet A</em> only allows HTTP (80) and DNS (53) traffic.</li>
+                                        <li>🚫 <em>Subnet E</em> has web browsing blocked.</li>
                                     </ul>
                                 </div>
                             </li>
                         </ul>
 
                         <div class="tech-section">
-                            <h4>🛠️ Tecnologías:</h4>
+                            <h4>🛠️ Technologies:</h4>
                             <div class="tech-tags">
                                 <span class="tag">Cisco Packet Tracer</span>
                                 <span class="tag">Static Routing</span>
@@ -110,7 +112,7 @@
                 </div>
 
                 <div style="margin-top: 40px; text-align: center;">
-                    <a href="listadeproyectos.html" class="action-btn outline">Volver al Listado</a>
+                    <a href="listadeproyectos.html" class="action-btn outline">Back to List</a>
                 </div>
 
             </section>
@@ -118,7 +120,7 @@
         </main>
 
         <footer class="area-footer glass-box">
-            <p>&copy; 2025 - SysAdmin Portfolio</p>
+            <p>&copy; Made by Oussama and cooked by Gemini</p>
         </footer>
 
     </div>
@@ -133,11 +135,11 @@
 
             if (estiloReal === "none") {
                 contenido.style.display = "block";
-                boton.innerHTML = "Ver menos detalles ▲";
+                boton.innerHTML = "View less details ▲";
                 boton.style.background = "rgba(59, 130, 246, 0.3)";
             } else {
                 contenido.style.display = "none";
-                boton.innerHTML = "Ver detalles técnicos ▼";
+                boton.innerHTML = "View technical details ▼";
                 boton.style.background = "rgba(255, 255, 255, 0.1)";
             }
         }
